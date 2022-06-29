@@ -1,10 +1,8 @@
 import { appConstants } from "../constants/constants";
 import { ContactInfoRow } from "../components/ContactInfoRow/ContactInfoRow";
-import { useEffect } from "react";
-import { connect } from "react-redux";
-import { useDispatch } from 'react-redux';
 import { NewContactForm } from "../components/NewContactForm/NewContactForm";
-
+import { useEffect } from "react";
+import { connect, useDispatch } from "react-redux";
 
 const Index = ({ contacts, searchTerm, nowAddingNewContact, addedContact }) => {
 
@@ -32,7 +30,6 @@ const Index = ({ contacts, searchTerm, nowAddingNewContact, addedContact }) => {
 
     const handleAddingNewContact = () => {
         dispatch({ type: "CHANGE_ADDING_NEW_CONTACT" })
-
     }
 
     const handleSavingNewContact = () => {
@@ -73,7 +70,6 @@ const mapStateToProps = (state) => {
         searchTerm: state.contactsReducer.searchTerm,
         nowAddingNewContact: state.contactsReducer.nowAddingNewContact,
         addedContact: state.contactsReducer.addedContact
-
     })
 }
 
