@@ -3,22 +3,22 @@ import { useDispatch } from 'react-redux';
 import { appButtons } from "../../constants/constants";
 
 
-export const ContactInfoRow = ({ contact }) => {
+export const ContactInfoRow = ({ contact, emojies }) => {
 
     const dispatch = useDispatch();
     const [isEdited, setIsEdited] = useState(false);
     const [currentContact, setCurrentContact] = useState(contact);
-    const { name, surname, phone, id } = currentContact;
-    const {saveButton, editButton, deleteButton} = appButtons;
+    const { emoji, name, surname, phone, id } = currentContact;
+    const { saveButton, editButton, deleteButton } = appButtons;
 
     const isDisabled = (name === '' || surname === '' || phone === '');
 
     const handleInputChange = (e, field) => {
-        setCurrentContact({...currentContact, [field]: e.target.value})
+        setCurrentContact({ ...currentContact, [field]: e.target.value })
     }
 
     const handleDelete = () => {
-        dispatch({type: "DELETE_CONTACT", id})
+        dispatch({ type: "DELETE_CONTACT", id })
     }
 
     const handleEdit = () => {
@@ -26,14 +26,14 @@ export const ContactInfoRow = ({ contact }) => {
     }
 
     const handleSave = () => {
-        dispatch( {type: "SAVE_CONTACT", contact: currentContact });
+        dispatch({ type: "SAVE_CONTACT", contact: currentContact });
         setIsEdited(false);
     }
 
 
     return (<div className="contact-info-container">
         <div className="contact-data">
-            <input readOnly={!isEdited} value={"Emoji"} onChange={() => handleInputChange} />
+            {isEdited ? <select className="emoji-select" onChange={(e) => handleInputChange(e, 'emoji')}>{emojies}</select> : <input readOnly value={emoji} id="emoji-input" />}
             <input autoFocus placeholder="Name..." readOnly={!isEdited} value={name} onChange={(e) => handleInputChange(e, 'name')} />
             <input placeholder="Surname..." readOnly={!isEdited} value={surname} onChange={(e) => handleInputChange(e, 'surname')} />
             <input placeholder="Phone..." maxLength="14" readOnly={!isEdited} value={phone} onChange={(e) => handleInputChange(e, 'phone')} />

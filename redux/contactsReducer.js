@@ -5,7 +5,7 @@ let defaultState = {
     searchTerm: '',
     nowAddingNewContact: false,
     addedContact: {
-        emoji: '',
+        emoji: "\uD83D\uDE00",
         name: '',
         surname: '',
         phone: '',
