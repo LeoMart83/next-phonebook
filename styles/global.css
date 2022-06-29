@@ -1,0 +1,94 @@
+.app-container{
+    margin-left: 20px;
+}
+
+.app-title {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    margin-top: 0px;
+    font-size: 32px;
+    font-family: monospace;
+}
+
+button:disabled {
+    opacity: 0.5;
+}
+
+.filter input {
+    font-size: 20px;
+    height: 30px;
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+.add-button button {
+    height: 40px;
+    width: 8%;
+    box-sizing: border-box;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    background-color: #0d6efd;
+    border: 1px solid rgb(75, 75, 75);
+    margin-bottom: 10px;
+}
+
+.contact-info-container {
+    display: flex;
+    border: 1px solid rgb(75, 75, 75);
+    background-color: rgb(51, 51, 51);
+    width: 70%;
+    height: 60px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.contact-data {
+    padding-left: 20px;
+    width: 75%;
+    display: flex;
+    margin-right: 10px;
+}
+
+.contact-data input {
+    box-sizing: border-box;
+    border: 0px;
+    outline: none;
+    font-size: 20px;
+    max-width: 25%;
+    background-color: rgb(51, 51, 51);
+    color: white;
+
+}
+
+.contact-buttons{
+    width: 25%;
+}
+
+.contact-buttons button {
+    width: 50%;
+    height: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    border: 0px
+}
+
+.edit-btn {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.save-btn {
+    background-color: #198754;
+    border-color: #198754;
+}
