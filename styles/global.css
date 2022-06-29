@@ -22,6 +22,12 @@ button:disabled {
     margin-bottom: 10px;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .add-button button{
     height: 40px;
     width: 8%;

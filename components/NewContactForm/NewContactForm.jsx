@@ -14,7 +14,7 @@ export const NewContactForm = ({ addedContact, mapEmojies }) => {
             <select className="emoji-select" onChange={(e) => handlechange(e, 'emoji')}> {mapEmojies} </select>
             <input autoFocus placeholder="Name..." value={name} onChange={(e) => handlechange(e, 'name')} />
             <input placeholder="Surname..." value={surname} onChange={(e) => handlechange(e, 'surname')} />
-            <input placeholder="Phone..." maxLength="14" value={phone} onChange={(e) => handlechange(e, 'phone')} />
+            <input placeholder="Phone..." type="number" value={phone} onChange={(e) => handlechange(e, 'phone')} />
         </div>
     </div>)
 
