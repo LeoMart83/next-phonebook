@@ -14,7 +14,7 @@ export const NewContactForm = ({ addedContact }) => {
             <input readOnly value={"Emoji"} onChange={() => { }} />
             <input autoFocus placeholder="Name..." value={name} onChange={(e) => handlechange(e, 'name')} />
             <input placeholder="Surname..." value={surname} onChange={(e) => handlechange(e, 'surname')} />
-            <input placeholder="Phone..." value={phone} onChange={(e) => handlechange(e, 'phone')} />
+            <input placeholder="Phone..." maxLength="14" value={phone} onChange={(e) => handlechange(e, 'phone')} />
         </div>
     </div>)
 

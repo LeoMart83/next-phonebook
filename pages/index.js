@@ -1,4 +1,4 @@
-import { appConstants } from "../constants/constants";
+import { appConstants, appButtons } from "../constants/constants";
 import { ContactInfoRow } from "../components/ContactInfoRow/ContactInfoRow";
 import { NewContactForm } from "../components/NewContactForm/NewContactForm";
 import { useEffect } from "react";
@@ -6,6 +6,7 @@ import { connect, useDispatch } from "react-redux";
 
 const Index = ({ contacts, searchTerm, nowAddingNewContact, addedContact }) => {
 
+    const { saveButton, cancelButton, addButton } = appButtons;
     const dispatch = useDispatch();
     const isDisabled = (addedContact.name === "" || addedContact.surname === "" || addedContact.phone === "");
 
@@ -51,13 +52,14 @@ const Index = ({ contacts, searchTerm, nowAddingNewContact, addedContact }) => {
 
     return (
         <div className="app-container">
-            <div className="app-title"> <h1>{appConstants.title}</h1> </div>
+            <div className="app-title"><h1>{appConstants.title}</h1></div>
             <div className="new-contact">
                 {nowAddingNewContact && <NewContactForm addedContact={addedContact} />}
-                <div className="add-button">{nowAddingNewContact ? <div>
-                    <button disabled={isDisabled} onClick={handleSavingNewContact}>Save</button>
-                    <button onClick={handleCancellingNewContact}>Cancel</button></div> :
-                    <button onClick={handleAddingNewContact}>Add</button>}</div></div>
+                <div className="add-button">{nowAddingNewContact ? <>
+                    <button className="edit-btn" disabled={isDisabled} onClick={handleSavingNewContact}>{saveButton}</button>
+                    <button className="delete-btn" onClick={handleCancellingNewContact}>{cancelButton}</button></> :
+                    <button className="edit-btn" onClick={handleAddingNewContact}>{addButton}</button>}</div>
+            </div>
             <div className="filter"><input placeholder="Search..." value={searchTerm} onChange={handleSearchTermChange} /></div>
             {contactsToDisplay}
         </div>
